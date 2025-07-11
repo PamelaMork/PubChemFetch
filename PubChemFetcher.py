@@ -13,5 +13,6 @@ if compounds:
     print("Molecular Formula:", compound.molecular_formula)
     print("Molecular Weight:", compound.molecular_weight)
     print("IUPAC Name:", compound.iupac_name)
+    print(f"SMILES (isomeric):  {compound.isomeric_smiles}")
 else:
     print("No compound found. Please check the name and try again.")
