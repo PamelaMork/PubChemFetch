@@ -1,13 +1,17 @@
 import pubchempy as pcp
 
-# Fetch compound data for theobromine by name
-compounds = pcp.get_compounds('theobromine', 'name')
+# Ask the user for a compound name
+name = input("Enter compound name: ")
 
+# Fetch compound data using the name the user entered
+compounds = pcp.get_compounds(name, 'name')
+
+# Check if we got any results
 if compounds:
-    compound = compounds[0]  # Use the first match
+    compound = compounds[0]
 
     print("Molecular Formula:", compound.molecular_formula)
     print("Molecular Weight:", compound.molecular_weight)
-    print("SMILES:", compound.canonical_smiles)
+    print("IUPAC Name:", compound.iupac_name)
 else:
-    print("Compound not found.")
+    print("No compound found. Please check the name and try again.")
